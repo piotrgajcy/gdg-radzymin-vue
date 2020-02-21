@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GDG Radzymin - Vue pierwsza apka</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>{{event}}</h1>
+        <h2>{{city}}</h2>
+        <button @click="changeVisibility">
+          {{isVisible ? 'Ukryj logo' : 'Pokaż logo'}}
+        </button>
+        <a :href="link" v-if="isVisible">
+          <img :src="logo" class="logo" />
+        </a>
+      </header>
+      <section class="main-pizza">
+        <div class="pizza">
+          <div class="pizza-wrapper">
+            <div class="sliced-pizza">
+              <img v-for="slice in pizza" :src="slice.img" />
+            </div>
+            <p>Smacznego :)</p>
+          </div>
+        </div>
+      </section>
+      <section class="top-pizza">
+        <h3>Moje ulubione pizze:</h3>
+        <ul>
+          <li></li>
+        </ul>
+      </section>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
+
+<!-- 
+  ZADANIA
+1. Do obiektu data dodaj tablicę ze swoimi trzema ulubionymi pizzami i wyświetl je w formie listy w sekcji, która ma klasę top-pizza
+2. Dodaj przycisk “Zjedz kawałek” i stwórz metodę eatSlice(), która zostanie wywołana po każdym kliknięciu na przycisk i sprawi że jeden kawałek pizzy zniknie
+3. Korzystając z dyrektyw v-if i v-else wyświetl tekst po zjedzeniu pizzy “Pojedzone :)”
+4. Stwórz computed property o nazwie “meetup”, który zwróci nazwę wydarzenia, miasto i rok. Użyj tego w nagłówku h1 (h2 usunąć)
+ -->

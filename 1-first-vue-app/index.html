@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GDG Radzymin - Vue pierwsza apka</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>{{event}}</h1>
+        <h2>Radzymin</h2>
+        <img :src="logo" class="logo" />
+      </header>
+      <section class="main-pizza"></section>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
+
+<!-- 
+ZADANIA:
+1. Do obiektu data dodaj city z wartością Radzymin i wyświetl w nagłówku <h2></h2>
+2. Otwórz konsolę w przeglądarce i podmień app.city="Warszawa"  zobaczysz jak natychmiast zmieniły się nazwa miasta w aplikacji. To reaktywność w wykonaniu Vue :) 
+3. Dodaj link do obiektu data i spraw żeby po kliknięciu w logo GDG przekieruje na stronę główną GDG Radzymin
+4. W sekcji, która ma klasę main-pizza wyświetl obrazek pizzy (link do obrazka musi być w obiekcie data) :)
+ -->

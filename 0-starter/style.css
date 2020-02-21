@@ -1,0 +1,69 @@
+* {
+  font-family: "Lato", sans-serif;
+}
+
+#app {
+  padding: 0 30px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+}
+
+button {
+  padding: 0.75em 2em;
+  border-radius: 2em;
+  display: inline-block;
+  color: #fff;
+  background-color: #4fc08d;
+  box-sizing: border-box;
+  border: 1px solid #4fc08d;
+  margin: 30px;
+  cursor: pointer;
+  min-width: 110px;
+}
+
+button:focus {
+  outline: none;
+}
+
+.logo {
+  max-width: 300px;
+}
+
+.counter {
+  font-weight: 700;
+}
+
+.main-pizza {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.pizza {
+  flex: 1 1 auto;
+}
+
+.pizza p {
+  text-align: center;
+}
+
+.pizza button {
+  margin: 0 auto;
+  display: block;
+}
+
+.sliced-pizza {
+  position: relative;
+  max-width: 360px;
+  min-height: 400px;
+  margin: 0 auto;
+}
+
+.sliced-pizza img {
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GDG Radzymin - Vue pierwsza apka</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="app">
+      <gdg-header
+        :city="city"
+        :logo="logo"
+        :link="link"
+        @clicked="visibilityBtnClickRecived"
+      ></gdg-header>
+      <p>Licznik kliknięć: {{visibilityCounter}}</p>
+      <section class="main-pizza">
+        <div class="pizza">
+          <div class="pizza-wrapper" v-if="pizza.length>0">
+            <div class="sliced-pizza">
+              <img v-for="slice in pizza" :src="slice.img" />
+            </div>
+            <p>Smacznego :)</p>
+            <button @click="eatSlice">Zjedz kawałek</button>
+          </div>
+          <p v-else>Pojedzone :)</p>
+        </div>
+      </section>
+      <section class="top-pizza">
+        <h3>Moje ulubione pizze:</h3>
+        <ul>
+          <li v-for="pizza in favPizzas">{{pizza}}</li>
+        </ul>
+      </section>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
+
+<!-- 
+  ZADANIE
+1. Utwórz komponent pizza, który będzie miał dokładnie te same funkcjonalności co w sekcji pizza. Dodaj props “name”, który będzie typu String i wyświetli nazwę pizzy nad napisem “Smacznego :)”
+2. Używając pętli v-for wyrenderuj komponent tyle razy, ile masz podanych nazw w tablicy z pizzami. Przekaż nazwę pizzy w propsie “name”.
+3. Do głównej instancji aplikacji dodaj pizzaCounter: 0 i wyświetl jako “Liczba zjedzonych kawałków: 0”. Za każdym razem jak klikniesz zjedz kawałek wyemituj zdarzenie, które zwiększy licznik zjedzonych kawałków o 1
+
+ -->
